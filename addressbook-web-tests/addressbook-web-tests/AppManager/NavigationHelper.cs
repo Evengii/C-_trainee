@@ -12,7 +12,6 @@ namespace addressbook_web_tests
 {
     public class NavigationHelper : HelperBase
     {
-        private IWebDriver driver;
         public NavigationHelper(IWebDriver driver) : base(driver) // используем базовый конструктор класса HelperBase
         {
         }

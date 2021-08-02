@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
@@ -12,7 +11,6 @@ namespace addressbook_web_tests
 {
     public class LoginLogoutHelper : HelperBase
     {
-        private IWebDriver driver; 
         public LoginLogoutHelper(IWebDriver driver):base(driver) // используем базовый конструктор класса HelperBase
         {  
         }
