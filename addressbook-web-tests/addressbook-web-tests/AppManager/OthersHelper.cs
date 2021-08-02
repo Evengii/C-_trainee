@@ -19,6 +19,15 @@ namespace addressbook_web_tests {
         {
             driver.FindElement(By.XPath("//div[@id='content']/form/input[21]")).Click();
         }
+
+        public void InitGroupModification()
+        {
+            driver.FindElement(By.Name("edit")).Click();
+        }
+        public void UpdateGroup()
+        {
+            driver.FindElement(By.Name("update")).Click();
+        }
         public void OpenPage()
         {
             driver.Navigate().GoToUrl(baseURL);

@@ -20,6 +20,7 @@ namespace addressbook_web_tests
         protected FillingFormHelper fillingFormHelper;
         protected OthersHelper otherActionsHelper;
         
+
         public ApplicationManager()
         {
             driver = new ChromeDriver();
