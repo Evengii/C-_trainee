@@ -26,7 +26,7 @@ namespace addressbook_web_tests {
         }
         public void UpdateGroup()
         {
-            driver.FindElement(By.Name("update")).Click();
+            driver.FindElement(By.XPath("/html/body/div/div[4]/form/input[3]")).Click();
         }
         public void OpenPage()
         {

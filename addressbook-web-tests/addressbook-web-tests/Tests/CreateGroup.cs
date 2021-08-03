@@ -7,13 +7,11 @@ using NUnit.Framework;
 namespace addressbook_web_tests
 {
     [TestFixture]
-    public class CreateGroup : TestBase
+    public class CreateGroup : AuthTestBase
     {
         [Test]
         public void TheCreateGroupTest()
         {
-            app.Others.OpenPage();
-            app.Auth.Authorization(new AccountData("admin", "secret"));
             app.Navigator.OpenGroupPage();
             app.Others.InitGroupCreation();
             app.Filling.FillGroupForm(new GroupData("Evgenii","My group","Foote"));

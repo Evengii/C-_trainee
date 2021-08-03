@@ -7,13 +7,11 @@ using NUnit.Framework;
 namespace addressbook_web_tests
 {
     [TestFixture]
-    public class DeleteGroup : TestBase
+    public class DeleteGroup : AuthTestBase
     {
         [Test]
         public void TheDeleteGroupTest()
         {
-            app.Others.OpenPage();
-            app.Auth.Authorization(new AccountData("admin", "secret"));
             app.Navigator.OpenGroupPage();
             app.Others.SelectingGroup(1);
             app.Others.RemoveGroup();

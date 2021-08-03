@@ -7,13 +7,11 @@ using NUnit.Framework;
 namespace addressbook_web_tests
 {
     [TestFixture]
-    public class AddContact : TestBase
+    public class AddContact : AuthTestBase
     { 
         [Test]
         public void TheAddContactTest()
         {
-            app.Others.OpenPage();
-            app.Auth.Authorization(new AccountData("admin", "secret"));
             app.Navigator.OpenAddNewContactPage();
             app.Filling.FillInfoForms();
             app.Others.SubmitCreating();

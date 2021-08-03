@@ -61,6 +61,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppManager\AuthTestBase.cs" />
+    <Compile Include="Tests\LoginTests.cs" />
     <Compile Include="Tests\ModificationGroup.cs" />
     <Compile Include="AppManager\OthersHelper.cs" />
     <Compile Include="Model\AccountData.cs" />

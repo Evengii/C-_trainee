@@ -3,7 +3,7 @@
   <Class Name="addressbook_web_tests.TestBase">
     <Position X="2.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAIAAAAAAAAAAAAABAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
       <FileName>AppManager\TestBase.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -34,7 +34,7 @@
   <Class Name="addressbook_web_tests.FillingFormHelper" Collapsed="true">
     <Position X="8" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAIAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAEAQAIAAAAAAA=</HashCode>
       <FileName>AppManager\FillingFormHelper.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -69,20 +69,20 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>BgAAAAAABAAAAQAAAAAAAACAAACAAAAAIAAAABEEACA=</HashCode>
+      <HashCode>BgAAAAAABAAAAQAAAAAAAACABACAAAAAACAAABEEACA=</HashCode>
       <FileName>AppManager\ApplicationManager.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="fillingFormHelper" />
       <Field Name="loginLogoutHelper" />
       <Field Name="navigationHelper" />
+      <Field Name="fillingFormHelper" />
       <Field Name="otherActionsHelper" />
     </ShowAsAssociation>
   </Class>
   <Class Name="addressbook_web_tests.OthersHelper" Collapsed="true">
     <Position X="8" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAAAAAACgAAEAAACAAAAABAACA=</HashCode>
+      <HashCode>AAACAACAAAAAAAAAAAAAAAAACgAAEAQACAAAAABAACA=</HashCode>
       <FileName>AppManager\OthersHelper.cs</FileName>
     </TypeIdentifier>
   </Class>
