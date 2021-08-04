@@ -14,20 +14,6 @@ namespace addressbook_web_tests
         public FillingFormHelper(IWebDriver driver) : base(driver) // используем базовый конструктор класса HelperBase
         {
         }
-
-        public void FillingModify(GroupData newData)
-        {
-            driver.FindElement(By.Name("group_name")).Click();
-            driver.FindElement(By.Name("group_name")).Clear();
-            driver.FindElement(By.Name("group_name")).SendKeys(newData.Name);
-            driver.FindElement(By.Name("group_header")).Click();
-            driver.FindElement(By.Name("group_header")).Clear();
-            driver.FindElement(By.Name("group_header")).SendKeys(newData.Header);
-            driver.FindElement(By.Name("group_footer")).Click();
-            driver.FindElement(By.Name("group_footer")).Clear();
-            driver.FindElement(By.Name("group_footer")).SendKeys(newData.Footer);
-        }
-
         public void FillInfoForms()
         {
             ContactData contact = new ContactData("Evgenii", "Ukladov");
