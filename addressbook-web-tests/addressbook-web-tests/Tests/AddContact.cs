@@ -15,7 +15,7 @@ namespace addressbook_web_tests
             app.Others.OpenPage();
             app.Auth.Authorization(new AccountData("admin", "secret"));
             app.Navigator.OpenAddNewContactPage();
-            app.Filling.FillInfoForms();
+            app.Filling.FillInfoForms(new ContactData("Evgenii", "Ukladov"));
             app.Others.SubmitCreating();
             app.Navigator.ReturnToHomepage();
             app.Auth.Logout();
