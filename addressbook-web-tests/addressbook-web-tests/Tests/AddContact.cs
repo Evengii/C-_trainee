@@ -15,12 +15,10 @@ namespace addressbook_web_tests
             app.Others.OpenPage();
             app.Auth.Authorization(new AccountData("admin", "secret"));
             app.Navigator.OpenAddNewContactPage();
-            app.Filling.FillInfoForms(new ContactData("Evgenii", "Ukladov"));
+            app.Filling.FillInfoForms(new ContactData("Evgenii", "Lalalalov"));
             app.Others.SubmitCreating();
             app.Navigator.ReturnToHomepage();
             app.Auth.Logout();
         }
-     
-        /////////
     }
 }
