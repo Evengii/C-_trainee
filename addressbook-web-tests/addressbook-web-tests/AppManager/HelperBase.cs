@@ -19,12 +19,9 @@ namespace addressbook_web_tests
         }
         public void Type(By locator, string text)
         {
-            if (text == "")
-            {
                 driver.FindElement(locator).Click();
                 driver.FindElement(locator).Clear();
                 driver.FindElement(locator).SendKeys(text);
-            }
         }
 
         public bool IsElementPresent(By by)

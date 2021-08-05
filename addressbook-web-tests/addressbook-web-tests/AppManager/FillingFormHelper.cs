@@ -24,9 +24,8 @@ namespace addressbook_web_tests
         }
         
 
-        public void FillInfoForms()
+        public void FillInfoForms(ContactData contact)
         {
-            ContactData contact = new ContactData("Evgenii", "Ukladov");
             driver.FindElement(By.Name("firstname")).Click();
             driver.FindElement(By.Name("firstname")).Clear();
             driver.FindElement(By.Name("firstname")).SendKeys(contact.Firstname);

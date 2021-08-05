@@ -46,11 +46,11 @@ namespace addressbook_web_tests
         }
         public static ApplicationManager GetInstance()
         {
-            if(! app.IsValueCreated)
+            if( !app.IsValueCreated)
             {
                 ApplicationManager newInstance = new ApplicationManager();
-                app.Value = newInstance; //если для текущего потока нет объекта ApplicationManager, он создает и возвращает его
                 newInstance.Others.OpenPage();
+                app.Value = newInstance; //если для текущего потока нет объекта ApplicationManager, он создает и возвращает его
             }
             return app.Value;
         }
