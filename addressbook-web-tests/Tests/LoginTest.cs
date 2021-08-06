@@ -5,17 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 
-
 namespace addressbook_web_tests
 {
     [TestFixture]
-    public class LoginTests : TestBase
+    public class LoginTest : TestBase
     {
         [Test]
-        public void LoginWithValidCredentials()
+        public void LoginWithValidCreds()
         {
-            app.Auth.Logout(); // предварительно выходим из аккаунта
+            app.Auth.Logout();
             AccountData account = new AccountData("admin", "secret");
+            app.Others.OpenPage();
             app.Auth.Authorization(account);
             Assert.IsFalse(app.Auth.IsLoggedIn(account)); // подтверждение проверки
         }
@@ -24,9 +24,9 @@ namespace addressbook_web_tests
         {
             app.Auth.Logout(); // предварительно выходим из аккаунта
             AccountData account = new AccountData("admin", "1343");
+            app.Others.OpenPage();
             app.Auth.Authorization(account);
             Assert.IsFalse(app.Auth.IsLoggedIn(account)); // подтверждение проверки
-            app.Others.OpenPage();
         }
     }
 }

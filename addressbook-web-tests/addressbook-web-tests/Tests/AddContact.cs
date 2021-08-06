@@ -12,11 +12,13 @@ namespace addressbook_web_tests
         [Test]
         public void TheAddContactTest()
         {
-            ContactData contact = new ContactData("Evgenii", "Lalalalov");
             app.Navigator.OpenAddNewContactPage();
-            app.Filling.FillInfoForms(contact);
+            app.Filling.FillInfoForms();
             app.Others.SubmitCreating();
             app.Navigator.ReturnToHomepage();
+            app.Auth.Logout();
         }
+     
+        
     }
 }

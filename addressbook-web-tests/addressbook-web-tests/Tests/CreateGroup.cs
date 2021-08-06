@@ -17,6 +17,7 @@ namespace addressbook_web_tests
             app.Filling.FillGroupForm(new GroupData("Evgenii","My group","Foote"));
             app.Others.SubmitGroupCreation();
             app.Navigator.ReturnGroupPage();
+            app.Auth.Logout();
         }
     }
 }

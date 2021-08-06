@@ -28,7 +28,6 @@ namespace addressbook_web_tests
                 app.Others.RemoveGroup();
                 app.Navigator.ReturnGroupPage();
             } 
-                        
         }
     }
 }
