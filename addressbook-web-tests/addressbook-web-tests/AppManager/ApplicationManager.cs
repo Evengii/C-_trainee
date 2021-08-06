@@ -33,6 +33,16 @@ namespace addressbook_web_tests
             fillingFormHelper = new FillingFormHelper(driver);
             otherActionsHelper = new OthersHelper(driver, baseURL);
         }
+        public static ApplicationManager GetInstance()
+        {
+            if (!app.IsValueCreated)
+            {
+                ApplicationManager newInstance = new ApplicationManager();
+                newInstance.Others.OpenPage();
+                app.Value = newInstance; //если для текущего потока нет объекта ApplicationManager, он создает и возвращает его
+            }
+            return app.Value;
+        }
         ~ApplicationManager()
         {
             try
@@ -43,16 +53,6 @@ namespace addressbook_web_tests
             {
                 // Ignore errors if unable to close the browser
             }
-        }
-        public static ApplicationManager GetInstance()
-        {
-            if( !app.IsValueCreated)
-            {
-                ApplicationManager newInstance = new ApplicationManager();
-                newInstance.Others.OpenPage();
-                app.Value = newInstance; //если для текущего потока нет объекта ApplicationManager, он создает и возвращает его
-            }
-            return app.Value;
         }
         
         public LoginLogoutHelper Auth

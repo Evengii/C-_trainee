@@ -41,6 +41,10 @@ namespace addressbook_web_tests {
         {
             driver.FindElement(By.XPath("//div[@id='content']/form/span[" + index + "]/input")).Click();
         }
+        public bool SelectingChoise()
+        {
+            return IsElementPresent(By.Name("selected[]"));
+        }
         public void SubmitGroupCreation()
         {
             driver.FindElement(By.Name("submit")).Click();

@@ -26,6 +26,7 @@ namespace addressbook_web_tests
             AccountData account = new AccountData("admin", "1343");
             app.Auth.Authorization(account);
             Assert.IsFalse(app.Auth.IsLoggedIn(account)); // подтверждение проверки
+            app.Others.OpenPage();
         }
     }
 }

@@ -15,12 +15,26 @@ namespace addressbook_web_tests
         public void Modification()
         {
             app.Navigator.OpenGroupPage();
-            app.Others.SelectingGroup(1);
-            app.Others.InitGroupModification();
-            app.Filling.FillingModify(new GroupData("Niko", "", ""));
-            app.Others.UpdateGroup();
-            app.Navigator.ReturnGroupPage();
-            app.Auth.Logout();
+            if (app.Others.SelectingChoise())
+            {
+                app.Others.SelectingGroup(1);
+                app.Others.InitGroupModification();
+                app.Filling.FillingModify(new GroupData("Niko", "", ""));
+                app.Others.UpdateGroup();
+                app.Navigator.ReturnGroupPage();
+            }
+            else
+            {
+                app.Others.InitGroupCreation();
+                app.Filling.FillGroupForm(new GroupData("Evgenii", "My group", "Foote"));
+                app.Others.SubmitGroupCreation();
+                app.Navigator.ReturnGroupPage();
+                app.Others.SelectingGroup(1);
+                app.Others.InitGroupModification();
+                app.Filling.FillingModify(new GroupData("Niko", "", ""));
+                app.Others.UpdateGroup();
+                app.Navigator.ReturnGroupPage();
+            }
         }
     }
 }

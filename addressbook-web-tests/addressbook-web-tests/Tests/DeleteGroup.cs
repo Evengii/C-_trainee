@@ -13,9 +13,22 @@ namespace addressbook_web_tests
         public void TheDeleteGroupTest()
         {
             app.Navigator.OpenGroupPage();
-            app.Others.SelectingGroup(1);
-            app.Others.RemoveGroup();
-            app.Navigator.ReturnGroupPage();
+            if (app.Others.SelectingChoise())
+            {
+                app.Others.SelectingGroup(1);
+                app.Others.RemoveGroup();
+                app.Navigator.ReturnGroupPage();
+            } else
+            {
+                app.Others.InitGroupCreation();
+                app.Filling.FillGroupForm(new GroupData("Evgenii", "My group", "Foote"));
+                app.Others.SubmitGroupCreation();
+                app.Navigator.ReturnGroupPage();
+                app.Others.SelectingGroup(1);
+                app.Others.RemoveGroup();
+                app.Navigator.ReturnGroupPage();
+            } 
+                        
         }
     }
 }
