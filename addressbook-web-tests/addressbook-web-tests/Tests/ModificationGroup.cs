@@ -34,6 +34,7 @@ namespace addressbook_web_tests
                 app.Filling.FillingModify(new GroupData("Niko", "", ""));
                 app.Others.UpdateGroup();
                 app.Navigator.ReturnGroupPage();
+            }
         }
     }
 }

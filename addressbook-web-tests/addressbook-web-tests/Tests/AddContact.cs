@@ -13,12 +13,9 @@ namespace addressbook_web_tests
         public void TheAddContactTest()
         {
             app.Navigator.OpenAddNewContactPage();
-            app.Filling.FillInfoForms();
+            app.Filling.FillInfoForms(new ContactData("Easd","asf"));
             app.Others.SubmitCreating();
             app.Navigator.ReturnToHomepage();
-            app.Auth.Logout();
-        }
-     
-        
+        }    
     }
 }

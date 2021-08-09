@@ -17,7 +17,7 @@ namespace addressbook_web_tests
             app.Auth.Logout(); // предварительно выходим из аккаунта
             AccountData account = new AccountData("admin", "secret");
             app.Auth.Authorization(account);
-            Assert.IsFalse(app.Auth.IsLoggedIn(account)); // подтверждение проверки
+            Assert.IsTrue(app.Auth.IsLoggedIn(account)); // подтверждение проверки
         }
         [Test]
         public void LoginWithInvalidCredentials()

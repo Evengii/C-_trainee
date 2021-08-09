@@ -20,6 +20,7 @@ namespace addressbook_web_tests
         protected NavigationHelper navigationHelper;
         protected FillingFormHelper fillingFormHelper;
         protected OthersHelper otherActionsHelper;
+        protected ChecksHelper checkHelper;
 
         private static ThreadLocal<ApplicationManager> app = new ThreadLocal<ApplicationManager>();
 
@@ -32,6 +33,7 @@ namespace addressbook_web_tests
             navigationHelper = new NavigationHelper(driver);
             fillingFormHelper = new FillingFormHelper(driver);
             otherActionsHelper = new OthersHelper(driver, baseURL);
+            checkHelper = new ChecksHelper(driver);
         }
         public static ApplicationManager GetInstance()
         {
@@ -54,7 +56,7 @@ namespace addressbook_web_tests
                 // Ignore errors if unable to close the browser
             }
         }
-        
+
         public LoginLogoutHelper Auth
         {
             get
@@ -83,6 +85,13 @@ namespace addressbook_web_tests
             get
             {
                 return otherActionsHelper;
+            }
+        }
+        public ChecksHelper Checks
+        {
+            get
+            {
+                return checkHelper;
             }
         }
     }

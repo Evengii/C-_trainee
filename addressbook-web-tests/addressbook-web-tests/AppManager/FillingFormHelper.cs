@@ -24,7 +24,7 @@ namespace addressbook_web_tests
         }
         
 
-        public void FillInfoForms()
+        public void FillInfoForms(ContactData contact)
         {
             Type(By.Name("firstname"), contact.Firstname);
             Type(By.Name("lastname"), contact.Lastname);
