@@ -14,7 +14,7 @@ namespace addressbook_web_tests
         {
             app.Navigator.OpenAddNewContactPage();
             app.Filling.FillInfoForms(new ContactData("Easd","asf"));
-            app.Others.SubmitCreating();
+            app.Others.SubmitContactCreating();
             app.Navigator.ReturnToHomepage();
         }    
     }

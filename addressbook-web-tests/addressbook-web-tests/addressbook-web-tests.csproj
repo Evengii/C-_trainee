@@ -62,7 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppManager\AuthTestBase.cs" />
-    <Compile Include="AppManager\ChecksHelper.cs" />
     <Compile Include="Tests\LoginTests.cs" />
     <Compile Include="Tests\ModificationGroup.cs" />
     <Compile Include="AppManager\OthersHelper.cs" />

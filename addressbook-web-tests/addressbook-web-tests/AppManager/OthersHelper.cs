@@ -14,8 +14,34 @@ namespace addressbook_web_tests {
         public OthersHelper(IWebDriver driver, string baseURL) : base(driver) // используем базовый конструктор класса HelperBase
         {
             this.baseURL = baseURL;
+
         }
-        public void SubmitCreating()
+        public List<GroupData> groupCashe = null;
+        public List<GroupData> GetGroupList()
+        {
+            if (groupCashe == null)
+            {
+                List<GroupData> groups = new List<GroupData>();
+                ICollection<IWebElement> elements = driver.FindElements(By.CssSelector("span.group"));
+                foreach (IWebElement element in elements)
+                {
+                    groups.Add(new GroupData(element.Text)); // здесь каждый раз создаетс объект GroupData и вызываются все его методы - Equals, CompareTo
+                }
+            }
+            return new List<GroupData>(groupCashe); // возвращается "копия" кэша, чтобы никто не мог его изменить
+        }
+
+        public int GetGroupCount()
+        {
+            return driver.FindElements(By.CssSelector("span.group")).Count;
+        }
+
+        public void SubmitGroupCreation()
+        {
+            driver.FindElement(By.Name("submit")).Click();
+            groupCashe = null; // очистка кэша
+        }
+        public void SubmitContactCreating()
         {
             driver.FindElement(By.XPath("//div[@id='content']/form/input[21]")).Click();
         }
@@ -45,10 +71,7 @@ namespace addressbook_web_tests {
         {
             return IsElementPresent(By.Name("selected[]"));
         }
-        public void SubmitGroupCreation()
-        {
-            driver.FindElement(By.Name("submit")).Click();
-        }
+        
         public void InitGroupCreation()
         {
             driver.FindElement(By.Name("new")).Click();

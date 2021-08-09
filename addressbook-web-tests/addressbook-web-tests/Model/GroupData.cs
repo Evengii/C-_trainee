@@ -6,55 +6,49 @@ using System.Threading.Tasks;
 
 namespace addressbook_web_tests
 {
-    public class GroupData
+    public class GroupData  : IEquatable<GroupData>, IComparable<GroupData> // добавили функционал сравнения с объектами типа GroupData
     {
-        private string name;
-        private string header;
-        private string footer;
         public GroupData(string name)
         {
-            this.name = name;
+            Name = name;
         }
         public GroupData(string name, string header, string footer)
         {
-            this.name = name;
-            this.header = header;
-            this.footer = footer;
+            Name = name;
+            Header = header;
+            Footer = footer;
         }
-        
-        public string Name
+        public string Name { get; set; }
+        public string Header { get; set; }
+        public string Footer { get; set; }
+        public string Id { get; set; }
+
+        public bool Equals(GroupData other) 
         {
-            get
+            if (Object.ReferenceEquals(other, null)) 
             {
-                return name;
+                return false;
             }
-            set
+            if (Object.ReferenceEquals(this, other))
             {
-                name = value;
+                return true;
             }
+            return Name == other.Name;
+            
         }
 
-        public string Header
+        public int CompareTo(GroupData other)
         {
-            get
+            if (Object.ReferenceEquals(other, null))
             {
-                return header;
+                return 1;
             }
-            set
-            {
-                header = value;
-            }
+            return Name.CompareTo(other.Name);
         }
-        public string Footer
+
+        public string toString()
         {
-            get
-            {
-                return footer;
-            }
-            set
-            {
-                footer = value;
-            }
+            return "name = " + Name;
         }
     }
 }
