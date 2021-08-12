@@ -21,11 +21,12 @@ namespace addressbook_web_tests {
         {
             if (groupCashe == null)
             {
+                groupCashe = new List<GroupData>();
                 List<GroupData> groups = new List<GroupData>();
                 ICollection<IWebElement> elements = driver.FindElements(By.CssSelector("span.group"));
                 foreach (IWebElement element in elements)
                 {
-                    groups.Add(new GroupData(element.Text)); // здесь каждый раз создаетс объект GroupData и вызываются все его методы - Equals, CompareTo
+                    groupCashe.Add(new GroupData(element.Text)); // здесь каждый раз создаетс объект GroupData и вызываются все его методы - Equals, CompareTo
                 }
             }
             return new List<GroupData>(groupCashe); // возвращается "копия" кэша, чтобы никто не мог его изменить

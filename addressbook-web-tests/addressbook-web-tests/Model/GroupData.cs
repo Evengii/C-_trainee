@@ -48,7 +48,7 @@ namespace addressbook_web_tests
 
         public string toString()
         {
-            return "name = " + Name;
+            return "name = " + Name + "\nheader" + Header + "\nfooter" + Footer;
         }
     }
 }
