@@ -36,7 +36,7 @@ namespace addressbook_web_tests
             string[] lines = File.ReadAllLines(@"C:\Users\uklad\source\repos\Evengii\Csharp_trainee\addressbook-web-tests\addressbook-web-tests\groups.csv");
             foreach(string l in lines)
             {
-                string [] parts = l .Split(',');
+                string [] parts = l.Split(',');
                 groups.Add(new GroupData(parts[0])
                 {
                     Header = parts[1],
