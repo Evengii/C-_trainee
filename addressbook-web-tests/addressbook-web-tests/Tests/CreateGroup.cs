@@ -5,13 +5,16 @@ using System.Threading;
 using System.Collections.Generic;
 using NUnit.Framework;
 using System.IO;
+using System.Xml;
+using System.Xml.Serialization;
+
 
 namespace addressbook_web_tests
 {
     [TestFixture]
     public class CreateGroup : AuthTestBase
     {
-        [Test, TestCaseSource("GroupDataFromFile")]
+        [Test, TestCaseSource("GroupDataFromXmlFile")]
         public void TheCreateGroupTest(GroupData group)
         {
             app.Navigator.OpenGroupPage();
@@ -30,7 +33,7 @@ namespace addressbook_web_tests
             Assert.AreEqual(oldGroups, newGroups); // вызывает метод Equals класса GroupData и проверяет одинаковость элементов массивов
         }
 
-        public static IEnumerable<GroupData> GroupDataFromFile()
+        public static IEnumerable<GroupData> GroupDataFromCsvFile()
         {
             List<GroupData> groups = new List<GroupData>();
             string[] lines = File.ReadAllLines(@"C:\Users\uklad\source\repos\Evengii\Csharp_trainee\addressbook-web-tests\addressbook-web-tests\groups.csv");
@@ -44,6 +47,12 @@ namespace addressbook_web_tests
                 });
             }
             return groups;
+        }
+        public static IEnumerable<GroupData> GroupDataFromXmlFile()
+        {
+            return (List<GroupData>) 
+                new XmlSerializer(typeof(List<GroupData>)).
+                Deserialize(new StreamReader(@"C:\Users\uklad\source\repos\Evengii\Csharp_trainee\addressbook-web-tests\addressbook-web-tests\groups.xml"));
         }
     }
 }
